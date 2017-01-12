@@ -1,11 +1,6 @@
-<h1>
-  {{title}}
-  <button md-button>flat</button>
-  <button md-raised-button>raised</button>
-  <button md-fab>
-    <md-icon class="md-24">check</md-icon>
+<div>
+  <button md-fab class='add' (click)='add()'>
+    <md-icon class='md-24'>add</md-icon>
   </button>
-  <button md-mini-fab>
-    <md-icon class="md-24">check</md-icon>
-  </button>
-</h1>
+</div>
+<router-outlet></router-outlet>
