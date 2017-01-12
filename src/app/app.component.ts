@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as root from './reducers';
+import * as product from './actions/product'
 
 @Component({
   selector: 'app-root',
@@ -6,9 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(private store: Store<root.State>) {
+
+  }
 
   add() {
-    console.log('add')
+    this.store.dispatch(new product.Test())
   }
 }

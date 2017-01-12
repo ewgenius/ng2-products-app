@@ -6,7 +6,13 @@ export const ActionTypes = {
 }
 
 export class AddProductAction implements Action {
-  type = ActionTypes.ADD_PRODUCT;
+  type = 'TEST';
 
   constructor(public payload: Product) { }
+}
+
+export class Test implements Action {
+  type = ActionTypes.ADD_PRODUCT;
+  
+  constructor() { }
 }

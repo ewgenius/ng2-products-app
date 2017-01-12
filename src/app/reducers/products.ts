@@ -16,10 +16,11 @@ const initialState: State = {
 export function reducer(state = initialState, action: AddProductAction): State {
   switch (action.type) {
     case ActionTypes.ADD_PRODUCT: {
-      return state
+      console.log(action.payload);
+      return state;
     }
     default: {
-      return state
+      return state;
     }
   }
 }

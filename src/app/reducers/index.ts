@@ -5,12 +5,15 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
 import * as products from './products';
+import * as auth from './auth';
 
 export interface State {
+  auth: auth.State,
   products: products.State
 };
 
 const reducers = {
+  auth: auth.reducer,
   products: products.reducer
 };
 

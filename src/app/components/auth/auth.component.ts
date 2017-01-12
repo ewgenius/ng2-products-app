@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as root from '../../reducers';
+import * as auth from '../../actions/auth'
 
 @Component({
   selector: 'app-auth',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<root.State>) { }
 
   ngOnInit() {
+    console.log('init')
   }
 
+  authorize() {
+    this.store.dispatch(new auth.AuthorizeAction())
+  }
 }

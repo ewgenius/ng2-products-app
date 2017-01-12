@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialModule } from '@angular/material';
 
-import {reducer} from './reducers'
+import { reducer } from './reducers'
 import { AppComponent } from './app.component';
 import { AuthComponent } from './components/auth/auth.component';
 
@@ -27,7 +28,8 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     MaterialModule.forRoot(),
-    StoreModule.provideStore(reducer)
+    StoreModule.provideStore(reducer),
+    StoreDevtoolsModule.instrumentOnlyWithExtension()
   ],
   providers: [],
   bootstrap: [AppComponent]
