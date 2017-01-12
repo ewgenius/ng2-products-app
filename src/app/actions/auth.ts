@@ -7,6 +7,11 @@ export const ActionTypes = {
 
 export class AuthorizeAction implements Action {
   type = ActionTypes.AUTHORIZE
+
+  constructor(public payload: {
+    username: string,
+    password: string
+  }) { }
 }
 
 export class UnAuthorizeAction implements Action {

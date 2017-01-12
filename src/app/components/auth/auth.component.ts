@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/distinctUntilChanged';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router'
 import { Store } from '@ngrx/store';
 import * as root from '../../reducers';
@@ -11,14 +14,13 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  authorized: Observable<boolean>
+  @Input() username: string = '';
+  @Input() password: string = '';
 
   constructor(
     private store: Store<root.State>,
     private router: Router
-  ) {
-
-  }
+  ) { }
 
   ngOnInit() {
     this.store.select(root.getAuthorized).subscribe(authorized => {
@@ -28,6 +30,9 @@ export class AuthComponent implements OnInit {
   }
 
   authorize() {
-    this.store.dispatch(new auth.AuthorizeAction());
+    this.store.dispatch(new auth.AuthorizeAction({
+      username: this.username,
+      password: this.password
+    }));
   }
 }
