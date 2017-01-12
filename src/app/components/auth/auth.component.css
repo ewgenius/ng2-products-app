@@ -6,3 +6,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.auth md-card-content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}

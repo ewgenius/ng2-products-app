@@ -1,3 +1,13 @@
 <div class='auth'>
-  <button md-raised-button (click)='authorize()'>authorize</button>
+  <md-card>
+    <md-card-content>
+      <md-input-container>
+        <input md-input type='text' placeholder='username' value=''>
+      </md-input-container>
+      <md-input-container>
+        <input md-input type='password' placeholder='password' value=''>
+      </md-input-container>
+      <button md-raised-button (click)='authorize()'>authorize</button>
+    </md-card-content>
+  </md-card>
 </div>
