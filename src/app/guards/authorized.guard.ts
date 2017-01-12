@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
+import { Store } from '@ngrx/store';
+import * as root from '../reducers';
+import * as auth from '../actions/auth';
 
 @Injectable()
 export class AuthorizedGuard implements CanActivate {
-  constructor() { }
+  constructor(private store: Store<root.State>) { }
 
   canActivate() {
-    return false
-    //return this.user.isLoggedIn();
+    return this.store.select(root.getAuthorized);
   }
 }

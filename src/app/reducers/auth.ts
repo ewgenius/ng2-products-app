@@ -25,3 +25,5 @@ export function reducer(state = initialState, action: AuthorizeAction): State {
     }
   }
 }
+
+export const getAuthorized = (state: State) => state.authorized

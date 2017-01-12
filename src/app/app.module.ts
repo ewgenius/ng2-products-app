@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { RouterStoreModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialModule } from '@angular/material';
@@ -30,6 +31,7 @@ import { FormComponent } from './components/form/form.component';
     FormsModule,
     MaterialModule.forRoot(),
     StoreModule.provideStore(reducer),
+    RouterStoreModule.connectRouter(),
     StoreDevtoolsModule.instrumentOnlyWithExtension()
   ],
   providers: [AuthorizedGuard],

@@ -1,3 +1,4 @@
+import { createSelector } from 'reselect';
 import { ActionReducer } from '@ngrx/store';
 import { compose } from '@ngrx/core/compose';
 import { environment } from '../../environments/environment';
@@ -28,3 +29,7 @@ export function reducer(state: any, action: any) {
     return developmentReducer(state, action);
   }
 }
+
+export const getAuthState = (state: State) => state.auth;
+
+export const getAuthorized = createSelector(getAuthState, auth.getAuthorized);
