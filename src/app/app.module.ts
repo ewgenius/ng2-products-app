@@ -8,20 +8,26 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialModule } from '@angular/material';
 
 import { reducer } from './reducers'
-import { AppComponent } from './app.component';
+import { AppComponent } from './components/app/app.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductComponent } from './components/product/product.component';
+import { FormComponent } from './components/form/form.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
-  { path: 'products', component: AppComponent },
-  { path: 'products/:id', component: AppComponent },
-  { path: 'products/:id/edit', component: AppComponent }
+  { path: 'products', component: ProductsComponent },
+  { path: 'products/:id', component: ProductComponent },
+  { path: 'products/:id/edit', component: FormComponent }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
+    AuthComponent,
+    ProductsComponent,
+    ProductComponent,
+    FormComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
