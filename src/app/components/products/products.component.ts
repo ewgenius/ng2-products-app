@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as root from '../../reducers';
+import { UnAuthorizeAction } from '../../actions/auth';
 
 @Component({
   selector: 'app-products',
@@ -7,12 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<root.State>) { }
 
   ngOnInit() {
   }
 
   add() {
-    
+
+  }
+
+  unAuthorize() {
+    this.store.dispatch(new UnAuthorizeAction())
   }
 }

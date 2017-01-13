@@ -1,7 +1,5 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router'
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
 import * as root from '../../reducers';
 import * as auth from '../../actions/auth';
 
@@ -15,8 +13,7 @@ export class AuthComponent {
   @Input() password: string = '';
 
   constructor(
-    private store: Store<root.State>,
-    private router: Router
+    private store: Store<root.State>
   ) { }
 
   authorize() {
