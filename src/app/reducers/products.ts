@@ -24,3 +24,6 @@ export function reducer(state = initialState, action: AddProductAction): State {
     }
   }
 }
+
+export const getProducts = (state: State) => state.items
+export const getProductIds = (state: State) => state.ids

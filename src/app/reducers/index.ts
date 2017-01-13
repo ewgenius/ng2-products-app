@@ -31,5 +31,8 @@ export function reducer(state: any, action: any) {
 }
 
 export const getAuthState = (state: State) => state.auth;
+export const getProductsState = (state: State) => state.products;
 
 export const getAuthorized = createSelector(getAuthState, auth.getAuthorized);
+export const getProducts = createSelector(getProductsState, products.getProducts);
+export const getProductIds = createSelector(getProductsState, products.getProductIds);

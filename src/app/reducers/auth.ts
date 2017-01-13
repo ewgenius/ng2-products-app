@@ -13,17 +13,17 @@ export function reducer(state = initialState, action: AuthorizeAction): State {
     case ActionTypes.AUTHORIZE: {
       return {
         authorized: true
-      }
+      };
     }
     case ActionTypes.UNAUTHORIZE: {
       return {
         authorized: false
-      }
+      };
     }
     default: {
-      return state
+      return state;
     }
   }
 }
 
-export const getAuthorized = (state: State) => state.authorized
+export const getAuthorized = (state: State) => state.authorized;
