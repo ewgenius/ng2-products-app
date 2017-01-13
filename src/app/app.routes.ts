@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 
 import { AuthorizedGuard } from './guards/authorized.guard'
 
-import { AppComponent } from './components/app/app.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/product/product.component';
