@@ -27,7 +27,7 @@ export class ProductFormComponent {
 
   onSave() {
     this.save.emit({
-      id: this.product ? this.product.id : 'test',
+      id: this.product ? this.product.id : '',
       name: this.model.name,
       price: this.model.price * 100,
       created: this.product ? this.product.created : new Date().toString(),

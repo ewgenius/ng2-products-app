@@ -1,3 +1,24 @@
-  <div class='products-list'>
-    <div *ngFor='let product of products'>{{product.name}}</div>
-  </div>
+<div class='products-list'>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>created</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of products' (click)='selectProduct(product.id)'>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.created}}</td>
+        <td>
+          <button (click)='selectForEdit(product.id)'></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

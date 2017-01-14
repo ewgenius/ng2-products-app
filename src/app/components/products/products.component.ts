@@ -35,7 +35,11 @@ export class ProductsComponent {
     });
   }
 
-  editProduct(id: string) {
+  selectProduct(id: string) {
     this.router.navigate([`products/${id}`]);
+  }
+
+  editProduct(id: string) {
+    this.router.navigate([`products/${id}/edit`]);
   }
 }

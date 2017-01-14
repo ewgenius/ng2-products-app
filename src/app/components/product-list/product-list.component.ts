@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -7,6 +7,16 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductListComponent {
   @Input() products: any[];
+  @Output() onSelect: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onEdit: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
+
+  selectProduct(id: string) {
+    this.onSelect.emit(id);
+  }
+
+  selectForEdit(id: string) {
+    this.onEdit.emit(id);
+  }
 }

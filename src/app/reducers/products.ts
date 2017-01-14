@@ -17,10 +17,13 @@ export function reducer(state = initialState, action: AddProductAction | SelectP
   switch (action.type) {
     case ActionTypes.ADD_PRODUCT: {
       const created = (action as AddProductAction).payload;
+      const newId = String(state.ids.length + 1);
       return Object.assign({}, state, {
-        ids: [...state.ids, created.id],
+        ids: [...state.ids, newId],
         items: Object.assign({}, state.items, {
-          [created.id]: created
+          [newId]: Object.assign({}, created, {
+            id: newId
+          })
         })
       });
     }
