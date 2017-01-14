@@ -5,7 +5,7 @@
       <md-icon class='md-24'>exit_to_app</md-icon>
     </button>
   </md-toolbar>
-  <app-product-list [products]='products | async' (onEdit)='editProduct($event)' (onSelect)='selectProduct($event)'></app-product-list>
+  <app-product-list [products]='products | async' (onEdit)='editProduct($event)' (onSelect)='selectProduct($event)' (onDelete)='deleteProduct($event)'></app-product-list>
   <button md-fab class='add' (click)='addProduct()'>
     <md-icon class='md-24'>add</md-icon>
   </button>

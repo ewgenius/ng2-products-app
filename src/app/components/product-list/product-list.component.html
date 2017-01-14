@@ -6,7 +6,8 @@
         <th>Name</th>
         <th>Price</th>
         <th>Created</th>
-        <th></th>
+        <th width="40"></th>
+        <th width="40"></th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,11 @@
         <td>
           <button md-icon-button (click)='editProduct(product.id)'>
             <md-icon class='md-24'>edit</md-icon>
+          </button>
+        </td>
+        <td>
+          <button md-icon-button (click)='deleteProduct(product.id)'>
+            <md-icon class='md-24'>delete</md-icon>
           </button>
         </td>
       </tr>

@@ -9,6 +9,7 @@ export class ProductListComponent {
   @Input() products: any[];
   @Output() onSelect: EventEmitter<string> = new EventEmitter<string>();
   @Output() onEdit: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onDelete: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
@@ -18,5 +19,9 @@ export class ProductListComponent {
 
   editProduct(id: string) {
     this.onEdit.emit(id);
+  }
+
+  deleteProduct(id: string) {
+    this.onDelete.emit(id);
   }
 }

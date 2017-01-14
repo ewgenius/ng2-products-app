@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { DBSchema, DBModule } from '@ngrx/db';
+import { EffectsModule } from '@ngrx/effects';
 import { RouterStoreModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialModule } from '@angular/material';
 
+import { ProductEffects } from './effects/product';
 import { AuthorizedGuard } from './guards/authorized.guard';
 import { reducer } from './reducers';
 import { routes } from './app.routes';
@@ -56,6 +58,7 @@ const schema: DBSchema = {
     StoreModule.provideStore(reducer),
     RouterStoreModule.connectRouter(),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    EffectsModule.run(ProductEffects),
     DBModule.provideDB(schema)
   ],
   providers: [AuthorizedGuard],

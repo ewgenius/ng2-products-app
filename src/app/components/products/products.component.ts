@@ -6,6 +6,7 @@ import { MdDialog } from '@angular/material';
 import * as root from '../../reducers';
 import { Product } from '../../models/Product';
 import { UnAuthorizeAction } from '../../actions/auth';
+import { DeleteProductAction } from '../../actions/product';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 
 @Component({
@@ -39,5 +40,9 @@ export class ProductsComponent {
 
   editProduct(id: string) {
     this.router.navigate([`products/${id}/edit`]);
+  }
+
+  deleteProduct(id: string) {
+    this.store.dispatch(new DeleteProductAction({ id }));
   }
 }
