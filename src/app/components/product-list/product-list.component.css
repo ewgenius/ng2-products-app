@@ -9,6 +9,7 @@
   max-width: 800px;
   margin: 0 auto;
   border-spacing: 0;
+  font-size: 12px;
 }
 
 .products-list table tr th {
@@ -27,7 +28,11 @@
 .products-list table tr th {
   background-color: #fff;
   border-bottom: 1px solid #f0f0f0;
-  padding: 8px 16px;
+  padding: 4px 8px;
+}
+
+.products-list table tr td.no-padding {
+  padding: 0;
 }
 
 .products-list .empty {
