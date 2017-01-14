@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { Product } from '../../models/Product';
 
 @Component({
@@ -6,7 +6,7 @@ import { Product } from '../../models/Product';
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css']
 })
-export class ProductFormComponent {
+export class ProductFormComponent implements OnChanges {
   @Input() product: Product;
   @Output() save: EventEmitter<Product> = new EventEmitter<Product>();
 
@@ -18,7 +18,9 @@ export class ProductFormComponent {
     price: 0
   };
 
-  constructor() {
+  constructor() { }
+
+  ngOnChanges() {
     if (this.product) {
       this.model.name = this.product.name;
       this.model.price = this.product.price / 100;

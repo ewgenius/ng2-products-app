@@ -1,9 +1,18 @@
-<div class='header-view'>
+<div class='product header-view'>
   <md-toolbar color='primary'>
-    <button md-icon-button>
+    <button md-icon-button (click)='back()'>
       <md-icon class='md-24'>arrow_back</md-icon>
     </button>
     <span class='spacer title'>Product</span>
   </md-toolbar>
-  <app-product-form></app-product-form>
+  <div class='product-card'>
+    <app-product-form *ngIf='editable' [product]='product | async' (save)='save($event)'></app-product-form>
+    <app-product-card *ngIf='!editable' [product]='product | async'></app-product-card>
+  </div>
+  <button *ngIf='editable' md-fab class='toggle-view' (click)='view()'>
+    <md-icon class='md-24'>remove_red_eye</md-icon>
+  </button>
+  <button *ngIf='!editable' md-fab class='toggle-view' (click)='edit()'>
+    <md-icon class='md-24'>edit</md-icon>
+  </button>
 </div>

@@ -21,6 +21,12 @@ body {
   padding-top: 64px;
 }
 
+.header-view .content {
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .header-view md-toolbar {
   position: fixed;
   top: 0;

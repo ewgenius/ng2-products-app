@@ -19,6 +19,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductDialogComponent } from './components/product-dialog/product-dialog.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 const schema: DBSchema = {
   version: 1,
@@ -42,7 +43,8 @@ const schema: DBSchema = {
     ProductComponent,
     ProductDialogComponent,
     ProductFormComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductCardComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

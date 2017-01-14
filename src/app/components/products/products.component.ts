@@ -21,7 +21,7 @@ export class ProductsComponent {
     private dialog: MdDialog,
     private router: Router
   ) {
-    this.products = store.select(root.getProducts);
+    this.products = this.store.select(root.getProducts);
   }
 
   unAuthorize() {
@@ -30,9 +30,7 @@ export class ProductsComponent {
 
   addProduct() {
     const dialogRef = this.dialog.open(ProductDialogComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-    });
+    dialogRef.afterClosed();
   }
 
   selectProduct(id: string) {

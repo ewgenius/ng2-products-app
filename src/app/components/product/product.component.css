@@ -1,0 +1,12 @@
+.product .product-card {
+  padding: 16px;
+  margin: 32px auto;
+  max-width: 400px;
+  background-color: #fff;
+}
+
+.toggle-view {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}
