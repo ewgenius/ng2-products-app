@@ -1,23 +1,39 @@
-import { ActionTypes, AuthorizeAction } from '../actions/auth'
+import { ActionTypes, AuthorizeAction } from '../actions/auth';
 
 export interface State {
-  authorized: boolean
+  authorized: boolean;
+  error: string;
 }
 
 const initialState: State = {
-  authorized: false
-}
+  authorized: false,
+  error: ''
+};
+
+const adminUser = {
+  username: 'admin',
+  password: 'admin'
+};
 
 export function reducer(state = initialState, action: AuthorizeAction): State {
   switch (action.type) {
     case ActionTypes.AUTHORIZE: {
-      return {
-        authorized: true
-      };
+      if (action.payload.username === adminUser.username && action.payload.password === adminUser.password) {
+        return {
+          authorized: true,
+          error: ''
+        };
+      } else {
+        return {
+          authorized: false,
+          error: 'wrong username or password'
+        };
+      }
     }
     case ActionTypes.UNAUTHORIZE: {
       return {
-        authorized: false
+        authorized: false,
+        error: ''
       };
     }
     default: {

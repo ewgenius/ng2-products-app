@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as root from '../../reducers';
 import * as auth from '../../actions/auth';
@@ -9,8 +9,8 @@ import * as auth from '../../actions/auth';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent {
-  @Input() username: string = '';
-  @Input() password: string = '';
+  username: string = '';
+  password: string = '';
 
   constructor(
     private store: Store<root.State>
