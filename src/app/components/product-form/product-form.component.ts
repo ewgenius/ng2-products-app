@@ -28,11 +28,14 @@ export class ProductFormComponent implements OnChanges {
   }
 
   onSave() {
-    this.save.emit({
-      id: this.product ? this.product.id : '',
+    const record: Product = {
       name: this.model.name,
       price: this.model.price * 100,
       created: this.product ? this.product.created : new Date().toString(),
-    });
+    };
+    if (this.product) {
+      record.id = this.product.id;
+    }
+    this.save.emit(record);
   }
 }

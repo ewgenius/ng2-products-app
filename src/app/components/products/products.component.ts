@@ -34,15 +34,15 @@ export class ProductsComponent {
     dialogRef.afterClosed();
   }
 
-  selectProduct(id: string) {
+  selectProduct(id: number) {
     this.router.navigate([`products/${id}`]);
   }
 
-  editProduct(id: string) {
+  editProduct(id: number) {
     this.router.navigate([`products/${id}/edit`]);
   }
 
-  deleteProduct(id: string) {
+  deleteProduct(id: number) {
     this.store.dispatch(new DeleteProductAction({ id }));
   }
 }

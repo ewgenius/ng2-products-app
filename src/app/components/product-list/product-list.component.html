@@ -2,7 +2,6 @@
   <table *ngIf='products.length > 0'>
     <thead>
       <tr>
-        <th>#</th>
         <th>Name</th>
         <th>Price</th>
         <th>Created</th>
@@ -12,7 +11,6 @@
     </thead>
     <tbody>
       <tr *ngFor='let product of products' (click)='selectProduct(product.id)'>
-        <td>{{product.id}}</td>
         <td>{{product.name}}</td>
         <td>{{product.price | decimalPrice}}</td>
         <td>{{product.created | date:'dd-MM-yyyy HH:mm:ss'}}</td>

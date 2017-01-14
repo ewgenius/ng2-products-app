@@ -31,7 +31,7 @@ export class ProductComponent implements OnInit {
         this.editable = false;
       }
       this.store.dispatch(new SelectProductAction({
-        id: params['id']
+        id: Number(params['id'])
       }));
     });
     this.product = this.store.select(root.getSelectedProduct);

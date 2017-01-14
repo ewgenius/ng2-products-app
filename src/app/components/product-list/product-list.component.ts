@@ -7,21 +7,21 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ProductListComponent {
   @Input() products: any[];
-  @Output() onSelect: EventEmitter<string> = new EventEmitter<string>();
-  @Output() onEdit: EventEmitter<string> = new EventEmitter<string>();
-  @Output() onDelete: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onSelect: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onEdit: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onDelete: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
-  selectProduct(id: string) {
+  selectProduct(id: number) {
     this.onSelect.emit(id);
   }
 
-  editProduct(id: string) {
+  editProduct(id: number) {
     this.onEdit.emit(id);
   }
 
-  deleteProduct(id: string) {
+  deleteProduct(id: number) {
     this.onDelete.emit(id);
   }
 }
