@@ -1,13 +1,15 @@
 <div class='auth'>
   <md-card>
     <md-card-content>
-      <md-input-container>
-        <input md-input type='text' placeholder='username' [(ngModel)]='username'>
-      </md-input-container>
-      <md-input-container>
-        <input md-input type='password' placeholder='password' [(ngModel)]='password'>
-      </md-input-container>
-      <button md-raised-button (click)='authorize()'>authorize</button>
+      <form (submit)='authorize()'>
+        <md-input-container>
+          <input md-input type='text' placeholder='username' [(ngModel)]='username' [ngModelOptions]='{standalone: true}'>
+        </md-input-container>
+        <md-input-container>
+          <input md-input type='password' placeholder='password' [(ngModel)]='password' [ngModelOptions]='{standalone: true}'>
+        </md-input-container>
+        <button type='submit' md-raised-button>authorize</button>
+      </form>
     </md-card-content>
   </md-card>
 </div>
