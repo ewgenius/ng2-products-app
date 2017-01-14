@@ -43,6 +43,10 @@ export class ProductComponent implements OnInit {
 
   save(product: Product) {
     this.store.dispatch(new EditProductAction(product));
+    // reselect product after saving. may be it's wrong to do like this :(
+    this.store.dispatch(new SelectProductAction({
+      id: product.id
+    }));
   }
 
   edit() {
