@@ -16,7 +16,7 @@ export class ProductListComponent {
     this.onSelect.emit(id);
   }
 
-  selectForEdit(id: string) {
+  editProduct(id: string) {
     this.onEdit.emit(id);
   }
 }

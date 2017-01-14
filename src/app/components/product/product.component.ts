@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -19,13 +19,17 @@ export class ProductComponent implements OnInit {
   constructor(
     private store: Store<root.State>,
     private location: Location,
-    //private router: Router,
+    private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.editable = true;
+      if (this.router.url.indexOf('edit') !== -1) {
+        this.editable = true;
+      } else {
+        this.editable = false;
+      }
       this.store.dispatch(new SelectProductAction({
         id: params['id']
       }));
@@ -34,7 +38,6 @@ export class ProductComponent implements OnInit {
   }
 
   back() {
-    console.log('back', this.location);
     this.location.back();
   }
 
@@ -44,7 +47,6 @@ export class ProductComponent implements OnInit {
 
   edit() {
     this.editable = !this.editable;
-    //this.router.navigate(['products',]);
   }
 
   view() {

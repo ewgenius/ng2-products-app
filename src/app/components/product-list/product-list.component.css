@@ -29,3 +29,9 @@
   border-bottom: 1px solid #f0f0f0;
   padding: 8px 16px;
 }
+
+.products-list .empty {
+  text-align: center;
+  margin: 32px auto;
+  color: #999;
+}

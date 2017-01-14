@@ -36,7 +36,9 @@ export function reducer(state = initialState, action: AddProductAction | SelectP
     case ActionTypes.EDIT_PRODUCT: {
       const edited = (action as EditProductAction).payload;
       return Object.assign({}, state, {
-        items: Object.assign({}, state.items, edited)
+        items: Object.assign({}, state.items, {
+          [edited.id]: edited
+        })
       });
     }
     default: {

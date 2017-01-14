@@ -1,6 +1,5 @@
 <div>
-  <h4>{{product.name}}</h4>
-  <p>{{product.price}}</p>
-  <p>{{product.price}}</p>
-  <p>{{product.created}}</p>
+  <p>name: {{product.name}}</p>
+  <p>price: {{product.price | decimalPrice}}</p>
+  <p>created: {{product.created | date:'dd-MM-yyyy HH:mm:ss'}}</p>
 </div>

@@ -20,6 +20,7 @@ import { ProductDialogComponent } from './components/product-dialog/product-dial
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { DecimalPricePipe } from './pipes/decimal-price.pipe';
 
 const schema: DBSchema = {
   version: 1,
@@ -44,7 +45,8 @@ const schema: DBSchema = {
     ProductDialogComponent,
     ProductFormComponent,
     ProductListComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    DecimalPricePipe
   ],
   imports: [
     RouterModule.forRoot(routes),
