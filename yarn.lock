@@ -69,6 +69,10 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ngrx/core/-/core-1.2.0.tgz#882b46abafa2e0e6d887cb71a1b2c2fa3e6d0dc6"
 
+"@ngrx/db@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/db/-/db-2.0.1.tgz#c14a2204ab34c587e41bb5c57411877f8f832183"
+
 "@ngrx/router-store@^1.2.5":
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/@ngrx/router-store/-/router-store-1.2.5.tgz#1cff82c5488fab995872c6f0d57a29a7ac91e598"

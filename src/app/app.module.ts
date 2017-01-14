@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { RouterStoreModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
+import { DBSchema, DBModule } from '@ngrx/db';
+import { RouterStoreModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialModule } from '@angular/material';
 
@@ -16,6 +17,17 @@ import { AuthComponent } from './components/auth/auth.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/product/product.component';
 import { FormComponent } from './components/form/form.component';
+
+const schema: DBSchema = {
+  version: 1,
+  name: 'products_app',
+  stores: {
+    products: {
+      autoIncrement: true,
+      primaryKey: 'id'
+    }
+  }
+}
 
 @NgModule({
   declarations: [
@@ -32,7 +44,8 @@ import { FormComponent } from './components/form/form.component';
     MaterialModule.forRoot(),
     StoreModule.provideStore(reducer),
     RouterStoreModule.connectRouter(),
-    StoreDevtoolsModule.instrumentOnlyWithExtension()
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    DBModule.provideDB(schema)
   ],
   providers: [AuthorizedGuard],
   bootstrap: [AppComponent]

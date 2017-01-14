@@ -6,7 +6,7 @@ export interface State {
 }
 
 const initialState: State = {
-  authorized: false,
+  authorized: localStorage.getItem('authorized') === 'true',
   error: ''
 };
 
@@ -19,6 +19,7 @@ export function reducer(state = initialState, action: AuthorizeAction): State {
   switch (action.type) {
     case ActionTypes.AUTHORIZE: {
       if (action.payload.username === adminUser.username && action.payload.password === adminUser.password) {
+        localStorage.setItem('authorized', 'true');
         return {
           authorized: true,
           error: ''
@@ -31,6 +32,7 @@ export function reducer(state = initialState, action: AuthorizeAction): State {
       }
     }
     case ActionTypes.UNAUTHORIZE: {
+      localStorage.setItem('authorized', 'false');
       return {
         authorized: false,
         error: ''

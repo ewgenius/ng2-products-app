@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as root from '../../reducers';
-import { Product } from '../../models/Product'
-import { Observable } from 'rxjs'
+import { Product } from '../../models/Product';
+import { Observable } from 'rxjs';
 import { UnAuthorizeAction } from '../../actions/auth';
 
 @Component({

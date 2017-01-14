@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as root from '../../reducers';
 
@@ -8,17 +8,17 @@ import * as root from '../../reducers';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   constructor(
     private store: Store<root.State>,
     private router: Router
-  ) { }
-
-  ngOnInit() {
+  ) {
     this.store.select(root.getAuthorized).subscribe(authorized => {
-      if (authorized)
+      if (authorized) {
         this.router.navigate(['products']);
-      else this.router.navigate(['']);
-    })
+      } else {
+        this.router.navigate(['']);
+      }
+    });
   }
 }
