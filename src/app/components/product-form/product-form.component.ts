@@ -36,6 +36,10 @@ export class ProductFormComponent implements OnChanges {
     if (this.product) {
       record.id = this.product.id;
     } else {
+      /* 
+       * it is workaround: ngrx.db does not provide id of inserted item,
+       * so we need to generate id manually
+       */
       record.id = (Number(localStorage.getItem('lastId')) || 0) + 1;
       localStorage.setItem('lastId', String(record.id));
     }

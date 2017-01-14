@@ -60,6 +60,9 @@ const schema: DBSchema = {
     StoreModule.provideStore(reducer),
     RouterStoreModule.connectRouter(),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    /**
+     * Effects for saving all data in idb
+     */
     EffectsModule.run(ProductEffects),
     DBModule.provideDB(schema)
   ],
