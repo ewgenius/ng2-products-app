@@ -7,7 +7,12 @@
   justify-content: center;
 }
 
+.auth h2 {
+  text-align: center;
+}
+
 .auth md-card-content form {
+  min-width: 220px;
   display: flex;
   flex-flow: column;
   align-items: center;

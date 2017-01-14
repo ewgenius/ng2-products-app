@@ -10,3 +10,19 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
+
+// simple scroller for hiding FAB buttons
+{
+  let lastScroll = 0;
+  let direction = 0;
+  document.onscroll = function () {
+    if (document.body.scrollTop > lastScroll && direction !== 1) {
+      direction = 1;
+      document.body.className = 'scroll-to-bottom';
+    } else if (document.body.scrollTop < lastScroll && direction !== -1) {
+      direction = -1;
+      document.body.className = 'scroll-to-top';
+    }
+    lastScroll = document.body.scrollTop;
+  };
+}

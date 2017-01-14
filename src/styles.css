@@ -3,8 +3,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
   font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
   background-color: #f0f0f0;
 }
@@ -31,6 +29,15 @@ body {
   position: fixed;
   top: 0;
   z-index: 1000;
+}
+
+body .fab-hide-to-bottom {
+  transition: transform ease 0.3s;
+  transform: translate(0px, 0px);
+}
+
+body.scroll-to-bottom .fab-hide-to-bottom {
+  transform: translate(0px, 100px);
 }
 
 @media (max-width: 960px) and (orientation: landscape) {

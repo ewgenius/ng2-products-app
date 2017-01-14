@@ -6,7 +6,7 @@
     </button>
   </md-toolbar>
   <app-product-list [products]='products | async' (onEdit)='editProduct($event)' (onSelect)='selectProduct($event)' (onDelete)='deleteProduct($event)'></app-product-list>
-  <button md-fab class='add' (click)='addProduct()'>
+  <button md-fab class='add fab-hide-to-bottom' (click)='addProduct()'>
     <md-icon class='md-24'>add</md-icon>
   </button>
 </div>

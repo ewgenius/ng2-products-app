@@ -1,6 +1,7 @@
 <div class='auth'>
   <md-card>
     <md-card-content>
+      <h2>NG2 Products App</h2>
       <p *ngIf='authorized'>
         Welcome! <a routerLink='/products'>Go to products page</a>
       </p>
@@ -11,7 +12,7 @@
         <md-input-container>
           <input md-input type='password' placeholder='password' name='password' [(ngModel)]='password'>
         </md-input-container>
-        <button type='submit' md-raised-button>authorize</button>
+        <button type='submit' color='primary' md-raised-button>authorize</button>
       </form>
     </md-card-content>
   </md-card>
