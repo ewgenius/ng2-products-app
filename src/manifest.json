@@ -1,9 +1,0 @@
-{
-  "name": "Products app",
-  "short_name": "Products app",
-  "start_url": "/",
-  "icons": [],
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff"
-}
