@@ -3,10 +3,10 @@ import { Action } from '@ngrx/store';
 export const ActionTypes = {
   AUTHORIZE: 'AUTHORIZE',
   UNAUTHORIZE: 'UNAUTHORIZE'
-}
+};
 
 export class AuthorizeAction implements Action {
-  type = ActionTypes.AUTHORIZE
+  type = ActionTypes.AUTHORIZE;
 
   constructor(public payload: {
     username: string,
@@ -15,5 +15,5 @@ export class AuthorizeAction implements Action {
 }
 
 export class UnAuthorizeAction implements Action {
-  type = ActionTypes.UNAUTHORIZE
+  type = ActionTypes.UNAUTHORIZE;
 }

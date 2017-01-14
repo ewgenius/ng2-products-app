@@ -9,8 +9,8 @@ import * as products from './products';
 import * as auth from './auth';
 
 export interface State {
-  auth: auth.State,
-  products: products.State
+  auth: auth.State;
+  products: products.State;
 };
 
 const reducers = {
@@ -24,8 +24,7 @@ const productionReducer: ActionReducer<State> = combineReducers(reducers);
 export function reducer(state: any, action: any) {
   if (environment.production) {
     return productionReducer(state, action);
-  }
-  else {
+  } else {
     return developmentReducer(state, action);
   }
 }
@@ -36,3 +35,4 @@ export const getProductsState = (state: State) => state.products;
 export const getAuthorized = createSelector(getAuthState, auth.getAuthorized);
 export const getProducts = createSelector(getProductsState, products.getProducts);
 export const getProductIds = createSelector(getProductsState, products.getProductIds);
+export const getSelectedProduct = createSelector(getProductsState, products.getSelectedProduct);

@@ -8,3 +8,11 @@ body {
   font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
   background-color: #f0f0f0;
 }
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.title {
+  padding: 0 16px;
+}

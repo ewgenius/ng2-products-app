@@ -1,4 +1,4 @@
-import 'hammerjs'
+import 'hammerjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,14 +9,16 @@ import { RouterStoreModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialModule } from '@angular/material';
 
-import { AuthorizedGuard } from './guards/authorized.guard'
-import { reducer } from './reducers'
-import { routes } from './app.routes'
+import { AuthorizedGuard } from './guards/authorized.guard';
+import { reducer } from './reducers';
+import { routes } from './app.routes';
 import { AppComponent } from './components/app/app.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/product/product.component';
-import { FormComponent } from './components/form/form.component';
+import { ProductDialogComponent } from './components/product-dialog/product-dialog.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 const schema: DBSchema = {
   version: 1,
@@ -27,15 +29,20 @@ const schema: DBSchema = {
       primaryKey: 'id'
     }
   }
-}
+};
 
 @NgModule({
+  entryComponents: [
+    ProductDialogComponent
+  ],
   declarations: [
     AppComponent,
     AuthComponent,
     ProductsComponent,
     ProductComponent,
-    FormComponent
+    ProductDialogComponent,
+    ProductFormComponent,
+    ProductListComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
