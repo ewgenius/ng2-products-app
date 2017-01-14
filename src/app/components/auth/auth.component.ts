@@ -11,10 +11,15 @@ import * as auth from '../../actions/auth';
 export class AuthComponent {
   username: string = '';
   password: string = '';
+  authorized: boolean;
 
   constructor(
     private store: Store<root.State>
-  ) { }
+  ) {
+    this.store.select(root.getAuthorized).subscribe(value => {
+      this.authorized = value;
+    });
+  }
 
   authorize() {
     this.store.dispatch(new auth.AuthorizeAction({

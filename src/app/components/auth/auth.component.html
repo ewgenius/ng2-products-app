@@ -1,7 +1,10 @@
 <div class='auth'>
   <md-card>
     <md-card-content>
-      <form (submit)='authorize()'>
+      <p *ngIf='authorized'>
+        Welcome! <a routerLink='/products'>Go to products page</a>
+      </p>
+      <form *ngIf='!authorized' (submit)='authorize()'>
         <md-input-container>
           <input md-input type='text' placeholder='username' name='username' [(ngModel)]='username'>
         </md-input-container>

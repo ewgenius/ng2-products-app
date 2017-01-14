@@ -35,6 +35,9 @@ export class ProductFormComponent implements OnChanges {
     };
     if (this.product) {
       record.id = this.product.id;
+    } else {
+      record.id = (Number(localStorage.getItem('lastId')) || 0) + 1;
+      localStorage.setItem('lastId', String(record.id));
     }
     this.save.emit(record);
   }

@@ -51,7 +51,9 @@ const schema: DBSchema = {
     DecimalPricePipe
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {
+      useHash: true
+    }),
     BrowserModule,
     FormsModule,
     MaterialModule.forRoot(),

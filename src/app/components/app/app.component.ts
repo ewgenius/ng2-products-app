@@ -22,9 +22,9 @@ export class AppComponent {
   ) {
     this.store.select(root.getAuthorized).subscribe(authorized => {
       if (authorized) {
-        this.router.navigate(['products']);
+        this.router.navigate(['/products']);
       } else {
-        this.router.navigate(['']);
+        this.router.navigate(['/']);
         this.store.dispatch(new LoadProductsAction());
       }
     });

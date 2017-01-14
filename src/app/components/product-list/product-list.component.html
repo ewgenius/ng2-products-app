@@ -2,6 +2,7 @@
   <table *ngIf='products.length > 0'>
     <thead>
       <tr>
+        <th>#</th>
         <th>Name</th>
         <th>Price</th>
         <th>Created</th>
@@ -10,7 +11,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let product of products' (click)='selectProduct(product.id)'>
+      <tr *ngFor='let product of products'>
+        <td><a [routerLink]="['/products', product.id]">{{product.id}}</a></td>
         <td>{{product.name}}</td>
         <td>{{product.price | decimalPrice}}</td>
         <td>{{product.created | date:'dd-MM-yyyy HH:mm:ss'}}</td>
